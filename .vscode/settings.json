@@ -1,0 +1,8 @@
+{
+ "prettier.configPath": ".prettierrc.json",
+ "diffEditor.ignoreTrimWhitespace": false,
+ "prettier.requireConfig": true,
+ "prettier.useEditorConfig": false,
+ "editor.formatOnSave": true
+}
+
