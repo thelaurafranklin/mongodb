@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1=title
+  p Welcome to #{title}
+
+  if error 
+    p Error getting content 
+  else 
+    h1 How many phrases are there?
+
+    p #[strong Phrases:] !{data}
