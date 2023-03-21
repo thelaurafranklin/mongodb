@@ -15,3 +15,18 @@ exports.index = async (req, res) => {
     console.error(err);
   }
 };
+
+exports.phrase_list = async (req, res) => {
+  try {
+    const phraseList = await Phrase.find().exec();
+    res.render('phrase_list', {
+      title: 'Phrase List',
+      phrase_list: phraseList,
+    });
+  } catch (err) {
+    res.render('phrase_list', {
+      title: 'Phrase List',
+      error: err,
+    });
+  }
+};

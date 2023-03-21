@@ -27,5 +27,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/', phraseRouter);
+app.use('/phrases', phraseRouter);
 
 module.exports = app;

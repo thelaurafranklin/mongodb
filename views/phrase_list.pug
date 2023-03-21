@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1=title
+
+  ul
+    each phrase in phrase_list
+      if phrase.phrase
+        li #{phrase.phrase}
+      else 
+        return
+
+    else
+      li There are no phrases
