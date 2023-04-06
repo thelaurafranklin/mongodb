@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 const PhraseSchema = new Schema({
   phrase: {
@@ -9,4 +9,6 @@ const PhraseSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('Phrase', PhraseSchema);
+const Phrase = mongoose.model('Phrase', PhraseSchema);
+
+export default Phrase;

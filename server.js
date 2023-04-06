@@ -1,7 +1,8 @@
 /* Module dependencies */
-const app = require('./app');
-const debug = require('debug')('mongodb:server');
-const http = require('http');
+import app from './app.js';
+import debugLib from 'debug';
+const debug = debugLib('mongodb:server');
+import http from 'http';
 
 /* Get and set port number */
 const port = normalizePort(process.env.PORT || '3000');

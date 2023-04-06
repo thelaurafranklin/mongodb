@@ -1,12 +1,11 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 /* Controller modules */
-const phrase_controller = require('../controllers/phraseController');
-const phrase = require('../models/phrase');
+import phraseController from '../controllers/phraseController.js';
 
 /* Routes */
-router.get('/', phrase_controller.index);
-router.get('/phrases', phrase_controller.phrase_list);
+router.get('/', phraseController.index);
+router.get('/phrases', phraseController.phrase_list);
 
-module.exports = router;
+export default router;

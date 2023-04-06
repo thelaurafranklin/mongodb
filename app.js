@@ -1,13 +1,15 @@
-require('dotenv').config();
-const express = require('express');
-const path = require('path');
+import dotenv from 'dotenv';
+dotenv.config();
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const phraseRouter = require('./routes/phrase');
+import phraseRouter from './routes/phrase.js';
 
 const app = express();
 
 // Mongoose setup
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 mongoose.set('strictQuery', false);
 const URI = process.env.MONGO_URI;
 
@@ -15,6 +17,10 @@ main().catch((err) => console.error(err));
 async function main() {
   await mongoose.connect(URI);
 }
+
+// Handle __dirname is not defined errors
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,4 +35,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', phraseRouter);
 app.use('/phrases', phraseRouter);
 
-module.exports = app;
+export default app;

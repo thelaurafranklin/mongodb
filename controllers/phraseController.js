@@ -1,6 +1,8 @@
-const Phrase = require('../models/phrase');
+import Phrase from '../models/phrase.js';
 
-exports.index = async (req, res) => {
+const phraseController = {};
+
+phraseController.index = async (req, res) => {
   try {
     const count = await Phrase.countDocuments();
     res.render('index', {
@@ -16,7 +18,7 @@ exports.index = async (req, res) => {
   }
 };
 
-exports.phrase_list = async (req, res) => {
+phraseController.phrase_list = async (req, res) => {
   try {
     const phraseList = await Phrase.find().exec();
     res.render('phrase_list', {
@@ -30,3 +32,5 @@ exports.phrase_list = async (req, res) => {
     });
   }
 };
+
+export default phraseController;
