@@ -1,1 +1,1 @@
-Very basic app with MongoDB for testing rich text editors
+Basic Express/Node/MongoDB app
