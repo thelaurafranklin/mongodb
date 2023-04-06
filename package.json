@@ -2,10 +2,9 @@
   "name": "mongodb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
+    "start": "node server",
+    "dev": "nodemon server",
     "server": "DEBUG=mongodb:* npm run dev"
   },
   "author": "",

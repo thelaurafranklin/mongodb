@@ -1,5 +1,5 @@
 /* Module dependencies */
-const app = require('../app');
+const app = require('./app');
 const debug = require('debug')('mongodb:server');
 const http = require('http');
 
